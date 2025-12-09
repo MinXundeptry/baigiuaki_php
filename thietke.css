@@ -1,149 +1,86 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form & Bảng Thông Tin</title>
-<style>
-/* ==== Bảng ==== */
+body {
+    font-family: Arial;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #b30000;
+}
+
+.mau {
+  
+    color: aqua;
+}
+
+/* ==== BẢNG ==== */
 table, th, td {
-    border: 4px solid black;
-    border-collapse: collapse; /* gộp viền */
-    padding: 5px;
-    font-family: Arial;
-    text-align: left;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 8px;
 }
+table { width: 60%; }
 
-/* ==== Form Container ==== */
-.form-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px; /* khoảng cách bên trong */
-    border: 2px solid #331da3;
-    font-family: Arial;
-    background-color: #f8cfc3;
+/* ==== FORM ==== */
+.form-box {
+    border: 2px solid #444;
+    padding: 20px;
+    width: 350px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #f2f2f2;
 }
-
-/* ==== Input / Select / Textarea ==== */
-.nhapthongtin {
+.inputText {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #b32c2c;
-    border-radius: 4px; /* bo góc */
-    box-sizing: border-box;
-    font-size: 15px;
+    padding: 8px;
+    margin: 8px 0;
 }
 
-#chonthanhpho, #chontinh {
-    width: 48%;
-    padding: 10px;
-    margin: 10px 1%;
-    border: 1px solid #2c35b3;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 15px;
+/* BOX MODEL */
+.box {
+    width: 200px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 3px solid black;
+    background: #ddd;
 }
 
-textarea {
+/* FLEXBOX */
+.flex {
+    display: flex;
+    gap: 20px;
+}
+.flex-item {
+    width: 120px;
+    background: #ffe6e6;
+    padding: 15px;
+    border: 1px solid #b30000;
+    text-align: center;
+}
+
+/* CARD */
+.card {
+    width: 220px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fefefe;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+.card img {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #390d72;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 15px;
-    resize: vertical; /* cho phép kéo dài chiều cao */
-}
-
-/* ==== Button ==== */
-button {
-    background-color: #d41c16; /* màu mặc định */
-    color: white;
-    padding: 10px 20px;
-    border: none;
     border-radius: 6px;
-    cursor: pointer; /* con trỏ chuột */
-    font-size: 16px;
-    transition: background-color 0.2s, transform 0.1s; /* mượt khi hover/active */
 }
 
+
+button {
+    padding: 10px 20px;
+    background: #b30000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
 button:hover {
-    background-color: #9b45a0; /* màu khi hover */
-    transform: scale(1.05);
+    background: #660000;
 }
-
-button:active {
-    background-color: #bd2a48; /* màu khi nhấn */
-    transform: scale(0.95);
-}
-
-/* ==== Responsive ==== */
-@media (max-width: 600px) {
-    #chonthanhpho, #chontinh {
-        width: 100%;
-        margin: 10px 0;
-    }
-}
-</style>
-</head>
-<body>
-
-<div class="form-container">
-    <h2>Nhập Thông Tin</h2>
-    <input type="text" class="nhapthongtin" placeholder="Họ và tên">
-    <input type="email" class="nhapthongtin" placeholder="Email">
-    <input type="tel" class="nhapthongtin" placeholder="Số điện thoại">
-    
-    <div style="display: flex; flex-wrap: wrap;">
-        <select id="chonthanhpho">
-            <option>Chọn thành phố</option>
-            <option>Hà Nội</option>
-            <option>TP HCM</option>
-        </select>
-        <select id="chontinh">
-            <option>Chọn tỉnh</option>
-            <option>Bình Dương</option>
-            <option>Đồng Nai</option>
-        </select>
-    </div>
-
-    <textarea rows="4" placeholder="Ghi chú"></textarea>
-    <button>Gửi Thông Tin</button>
-</div>
-
-<!-- ==== Bảng Thông Tin ==== -->
-<div style="max-width:800px; margin: 50px auto;">
-    <h2>Dữ liệu đã nhập</h2>
-    <table style="width:100%">
-        <tr>
-            <th>Họ và tên</th>
-            <th>Email</th>
-            <th>Số điện thoại</th>
-            <th>Thành phố</th>
-            <th>Tỉnh</th>
-            <th>Ghi chú</th>
-        </tr>
-        <tr>
-            <td>Nguyễn Văn A</td>
-            <td>a@gmail.com</td>
-            <td>0123456789</td>
-            <td>Hà Nội</td>
-            <td>Bình Dương</td>
-            <td>Không có</td>
-        </tr>
-        <tr>
-            <td>Trần Thị B</td>
-            <td>b@gmail.com</td>
-            <td>0987654321</td>
-            <td>TP HCM</td>
-            <td>Đồng Nai</td>
-            <td>Ghi chú mẫu</td>
-        </tr>
-    </table>
-</div>
-
-</body>
-</html>
