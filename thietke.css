@@ -1,0 +1,86 @@
+body {
+    font-family: Arial;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #b30000;
+}
+
+.mau {
+  
+    color: aqua;
+}
+
+/* ==== BẢNG ==== */
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+}
+table { width: 60%; }
+
+/* ==== FORM ==== */
+.form-box {
+    border: 2px solid #444;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    background: #f2f2f2;
+}
+.inputText {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+}
+
+/* BOX MODEL */
+.box {
+    width: 200px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 3px solid black;
+    background: #ddd;
+}
+
+/* FLEXBOX */
+.flex {
+    display: flex;
+    gap: 20px;
+}
+.flex-item {
+    width: 120px;
+    background: #ffe6e6;
+    padding: 15px;
+    border: 1px solid #b30000;
+    text-align: center;
+}
+
+/* CARD */
+.card {
+    width: 220px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    background: #fefefe;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+.card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+
+button {
+    padding: 10px 20px;
+    background: #b30000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+button:hover {
+    background: #660000;
+}
